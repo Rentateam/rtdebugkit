@@ -1,0 +1,57 @@
+PODS:
+  - Alamofire (4.6.0)
+  - AlamofireActivityLogger (2.4.0):
+    - Alamofire (~> 4.5)
+  - CocoaAsyncSocket (7.6.2)
+  - FLEX (2.4.0)
+  - JustLog (2.0.0):
+    - CocoaAsyncSocket (~> 7.6.1)
+    - SwiftyBeaver (~> 1.4.0)
+  - KSCrash/Core (1.15.18):
+    - KSCrash/Reporting/Filters/Basic
+  - KSCrash/Recording (1.15.18):
+    - KSCrash/Recording/Tools (= 1.15.18)
+  - KSCrash/Recording/Tools (1.15.18)
+  - KSCrash/Reporting/Filters/Base (1.15.18):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.15.18):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - RTDebugKit (0.1.0):
+    - Alamofire
+    - AlamofireActivityLogger
+    - FLEX (= 2.4.0)
+    - JustLog (= 2.0.0)
+    - Sentry (= 3.11)
+    - TTWindowManager (= 0.0.2)
+  - Sentry (3.11.0):
+    - Sentry/Core (= 3.11.0)
+    - Sentry/KSCrash (= 3.11.0)
+  - Sentry/Core (3.11.0)
+  - Sentry/KSCrash (3.11.0):
+    - KSCrash/Core (~> 1.15.12)
+  - SwiftyBeaver (1.4.4)
+  - TTWindowManager (0.0.2)
+
+DEPENDENCIES:
+  - RTDebugKit (from `../`)
+
+EXTERNAL SOURCES:
+  RTDebugKit:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireActivityLogger: bff49b2cde8886e1ccb929c699f915472867fdda
+  CocoaAsyncSocket: 3541e024f48c54b251638ef72d51dd42808de932
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  JustLog: 075863acc3463dd92e3c62a28fb64baa81c39fcd
+  KSCrash: 5394936f41e5c1ef7b79cf79b30d53299b0c160e
+  RTDebugKit: 802530f192d385dba8631d5960c5ceb4ae5a788a
+  Sentry: 3636dfa67d54e8dee3510ab903492af7f73da02c
+  SwiftyBeaver: 25bd76281f49ca989ec2e3cbde9af89c15bc1432
+  TTWindowManager: c72da925d19950c6e87b57b05ae38e1fdd268db9
+
+PODFILE CHECKSUM: 024808286636af960e93cfcf33861bbb80a0a077
+
+COCOAPODS: 1.4.0

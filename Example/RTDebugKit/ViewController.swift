@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  RTDebugKit
-//
-//  Created by a-25 on 04/06/2018.
-//  Copyright (c) 2018 a-25. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

@@ -1,0 +1,6 @@
+framework module Pods_RTDebugKit_Tests {
+  umbrella header "Pods-RTDebugKit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

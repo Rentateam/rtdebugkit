@@ -1,22 +1,49 @@
-//
-//  AppDelegate.swift
-//  RTDebugKit
-//
-//  Created by a-25 on 04/06/2018.
-//  Copyright (c) 2018 a-25. All rights reserved.
-//
-
 import UIKit
+import RTDebugKit
+import TTWindowManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private var debugService: DebugServiceProtocol!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let window = TTWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        window.rootViewController = storyboard.instantiateInitialViewController()
+        
+        let backendEndpointService = BackendEndpointService(handler: self, defaultAlias: "dev")
+        backendEndpointService.addBackendEndpoint(alias: "dev", url: "https://localhost:8000/api")
+        backendEndpointService.addBackendEndpoint(alias: "test", url: "https://sometestserver.com/api")
+        //this methods renders its own window, so it should be called before window.makeKeyAndVisible
+        backendEndpointService.decorateApplicationWindow()
+        
+        window.makeKeyAndVisible()
+        
+        let isDebug = true
+        self.initDebugService(window, isDebug: isDebug, backendEndpointService: backendEndpointService)
+        
         return true
+    }
+    
+    private func initDebugService(_ window: TTWindow, isDebug: Bool, backendEndpointService: BackendEndpointService) {
+        //Отдельно, чтобы window было инициализировано
+        DispatchQueue.main.async {
+            if isDebug {
+                let debug = DebugService(window: window, backendEndpointService: backendEndpointService)
+                DebugService.logger = BackgroundLogService(DebugLogService())
+                debug.activate()
+                self.debugService = debug
+            } else {
+                self.debugService = ReleaseDebugService()
+                self.debugService.activate()
+                ReleaseDebugService.logger = BackgroundLogService(LogzSentryLogService(logzioToken: "logzio_token", sentryDSN: "sentry_dsn"))
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -44,3 +71,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: BackendEndpointHandlerProtocol {
+    func resetBackendEndpoint() {
+        //Add some reinitialization code here
+        print("Reset backend endpoint")
+    }
+    
+    func setBaseUrl(_ url: String) {
+        //Set base url in your request class
+        print("set base url \(url)")
+    }
+}
