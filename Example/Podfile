@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RTDebugKit_Example' do
+  pod 'RTDebugKit', :path => '../'
+
+  target 'RTDebugKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
