@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RTDebugKit'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A helper library to add debug abilities in your app'
 
 # This description is used to generate tags and improve search results.

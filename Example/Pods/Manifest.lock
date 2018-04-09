@@ -17,13 +17,13 @@ PODS:
   - KSCrash/Reporting/Filters/Basic (1.15.18):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
-  - RTDebugKit (0.1.0):
+  - RTDebugKit (0.1.1):
     - Alamofire
     - AlamofireActivityLogger
-    - FLEX (= 2.4.0)
-    - JustLog (= 2.0.0)
-    - Sentry (= 3.11)
-    - TTWindowManager (= 0.0.2)
+    - FLEX
+    - JustLog
+    - Sentry
+    - TTWindowManager
   - Sentry (3.11.0):
     - Sentry/Core (= 3.11.0)
     - Sentry/KSCrash (= 3.11.0)
@@ -36,9 +36,21 @@ PODS:
 DEPENDENCIES:
   - RTDebugKit (from `../`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireActivityLogger
+    - CocoaAsyncSocket
+    - FLEX
+    - JustLog
+    - KSCrash
+    - Sentry
+    - SwiftyBeaver
+    - TTWindowManager
+
 EXTERNAL SOURCES:
   RTDebugKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -47,11 +59,11 @@ SPEC CHECKSUMS:
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   JustLog: 075863acc3463dd92e3c62a28fb64baa81c39fcd
   KSCrash: 5394936f41e5c1ef7b79cf79b30d53299b0c160e
-  RTDebugKit: 802530f192d385dba8631d5960c5ceb4ae5a788a
+  RTDebugKit: 7149613c7238bed593adf095099ec17312e2b517
   Sentry: 3636dfa67d54e8dee3510ab903492af7f73da02c
   SwiftyBeaver: 25bd76281f49ca989ec2e3cbde9af89c15bc1432
   TTWindowManager: c72da925d19950c6e87b57b05ae38e1fdd268db9
 
-PODFILE CHECKSUM: 024808286636af960e93cfcf33861bbb80a0a077
+PODFILE CHECKSUM: 1955ddddb1bf9c6edacae9540856a5da2109ccfb
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

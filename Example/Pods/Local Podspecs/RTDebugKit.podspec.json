@@ -1,8 +1,8 @@
 {
   "name": "RTDebugKit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A helper library to add debug abilities in your app",
-  "description": "It is a library to add debug functions in your app. All they appear with application shake on debug builds. They include:\n- debugger\n- changing of backend endpoint\n- logging",
+  "description": "It is a library to add debug functions in your app. All they appear with application shake on debug builds. They include:\n- in-app debugger\n- changing of backend endpoint\n- logging (console in debug mode and logz.io + sentry in release mode)",
   "homepage": "https://bitbucket.org/rentateam/rtdebugkit",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://bitbucket.org/rentateam/rtdebugkit.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "pod_target_xcconfig": {
     "SWIFT_VERSION": "4.0"
@@ -35,16 +35,16 @@
 
     ],
     "JustLog": [
-      "2.0.0"
+
     ],
     "Sentry": [
-      "3.11"
+
     ],
     "FLEX": [
-      "2.4.0"
+
     ],
     "TTWindowManager": [
-      "0.0.2"
+
     ]
   }
 }
