@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RTDebugKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A helper library to add debug abilities in your app'
 
 # This description is used to generate tags and improve search results.
@@ -24,13 +24,14 @@ Pod::Spec.new do |s|
   - logging (console in debug mode and logz.io + sentry in release mode)
                        DESC
 
-  s.homepage         = 'https://bitbucket.org/rentateam/rtdebugkit'
+  s.homepage         = 'https://github.com/Rentateam/rtdebugkit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RentaTeam' => 'info@rentateam.ru' }
-  s.source           = { :git => 'https://bitbucket.org/rentateam/rtdebugkit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Rentateam/rtdebugkit.git', :tag => s.version.to_s }
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
   s.ios.deployment_target = '10.3'
+  s.swift_version = '4.0'
 
   s.source_files = 'RTDebugKit/Classes/**/*'
   s.resource_bundles = {
